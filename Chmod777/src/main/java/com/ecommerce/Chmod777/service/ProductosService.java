@@ -3,7 +3,7 @@ package com.ecommerce.Chmod777.service;
 import java.util.ArrayList;
 
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.RequestBody;
+
 
 import com.ecommerce.Chmod777.model.Producto;
 
@@ -23,10 +23,24 @@ public class ProductosService {
 		lista.add(new Producto("Taller psicoeducativo",1000,"tallerPsicoeducativo.jpg","Son talleres dirigidos a grupos, instituciones educativa y organizaciones. En Dánika nos preocupamos por ofrecer temáticas actualizadas y que se ajustan a las necesidades del cliente.","talleres"));
 	}
 	
-	//Método para agregar un producto
-	public Producto addProducto (Producto producto) {
+	public ArrayList<Producto> getProductos() {
+		return lista;
+	}//getProducto
+
+	public Producto getProducto(Long prodId) {
+		Producto tmpProd = null;
+		for (Producto producto : lista) {
+			if (producto.getId()==prodId) {
+				tmpProd = producto;
+				break;
+			}//if ==prodId
+		}//foreach
+		return tmpProd; 
+	}//getproducto
+
+	public Producto addProducto(Producto producto) {
 		lista.add(producto);
 		return producto;
-	}//addProducto
+	}//addPtoducto
 	
 }//class ProductosService
