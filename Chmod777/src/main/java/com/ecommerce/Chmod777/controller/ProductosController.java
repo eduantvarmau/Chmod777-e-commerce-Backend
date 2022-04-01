@@ -34,5 +34,10 @@ public class ProductosController {
 		return productosService.getProductos();	
 	}//getProductos
 	
+	@GetMapping(path="{prodId}")
+    public Producto getProducto(@PathVariable("prodId") Long prodId) {
+        return productosService.getProducto(prodId);
+    }//getProducto
+	
 	
 }//Text to class product control
