@@ -43,4 +43,16 @@ public class ProductosService {
 		return producto;
 	}//addPtoducto
 	
+	//metodo para borrar en el servicio
+    public Producto deleteProducto(Long prodId) {
+        Producto tmpProd = null;
+        for (Producto producto : lista) {
+            if (producto.getId()==prodId) {
+                tmpProd = lista.remove(lista.indexOf(producto));
+                break;
+            }//if == prodId
+        }//foreach
+        return tmpProd;
+    }
+	
 }//class ProductosService

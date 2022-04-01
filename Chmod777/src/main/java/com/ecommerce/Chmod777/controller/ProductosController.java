@@ -3,6 +3,7 @@ package com.ecommerce.Chmod777.controller;
 import java.util.ArrayList;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -38,6 +39,12 @@ public class ProductosController {
     public Producto getProducto(@PathVariable("prodId") Long prodId) {
         return productosService.getProducto(prodId);
     }//getProducto
+	
+	@DeleteMapping(path="{prodId}")
+    public Producto deleteProducto(@PathVariable("prodId") Long prodId) {
+        return productosService.deleteProducto(prodId);
+    }//deleteproducto
+	
 	
 	
 }//Text to class product control
