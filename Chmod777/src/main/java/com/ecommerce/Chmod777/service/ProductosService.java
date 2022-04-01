@@ -54,5 +54,20 @@ public class ProductosService {
         }//foreach
         return tmpProd;
     }
+  //Metodo_para_actualizar 
+  	public Producto updateProducto(Long prodId, String name, double price, String thumbnail, String descriptions, String category ) {
+  		Producto tmpProd = null;
+  		for (Producto producto : lista) {
+  			if (producto.getId()==prodId) {
+  				if(name!=null) producto.setName(name);
+  				if(price>0) producto.setPrice(price);
+  				if(thumbnail!=null) producto.setThumbnail(thumbnail);
+  				if(descriptions!=null) producto.setDescriptions(descriptions);
+  				if(category!=null) producto.setCategory(category);
+  				
+  			}//if == prodId
+  		}//foreach
+  		return tmpProd;
+  	}
 	
 }//class ProductosService
