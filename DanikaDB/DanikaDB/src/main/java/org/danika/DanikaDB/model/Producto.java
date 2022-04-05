@@ -18,12 +18,14 @@ public class Producto {
 	private String descripcion;
 	private String URL_imagen;
 	private double precio;
-	public Producto(Long id, String nombre, String descripcion, String uRL_imagen, double precio) {
+	private String categoria;
+	public Producto(Long id, String nombre, String descripcion, String URL_imagen, double precio, String categoria) {
 		this.id = id;
 		this.nombre = nombre;
 		this.descripcion = descripcion;
-		URL_imagen = uRL_imagen;
+		this.URL_imagen = URL_imagen;
 		this.precio = precio;
+		this.categoria = categoria;
 	}//constructor
 	
 	
@@ -61,12 +63,21 @@ public class Producto {
 		this.precio = precio;
 	}//setPrecio
 	
-	
+	public String getCategoria() {
+		return categoria;
+	}//getcategoria
+
+	public void setCategoria(String categoria) {
+		this.categoria = categoria;
+	}//setcategoria
+
+
 	@Override
 	public String toString() {
 		return "Producto [id=" + id + ", nombre=" + nombre + ", descripcion=" + descripcion + ", URL_imagen="
-				+ URL_imagen + ", precio=" + precio + "]";
-	}//string
+				+ URL_imagen + ", precio=" + precio + ", categoria=" + categoria + "]";
+	}//tostring
+	
 	
 	
 	

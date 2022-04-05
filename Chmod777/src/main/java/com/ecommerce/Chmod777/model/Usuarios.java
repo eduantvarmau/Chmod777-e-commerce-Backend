@@ -78,7 +78,6 @@ public class Usuarios {
 	
 	
 
-
 	@Override
 	public String toString() {
 		return "Usuarios [nombre=" + nombre + ", apellido=" + apellido + ", telefono=" + telefono + ", estado=" + estado
