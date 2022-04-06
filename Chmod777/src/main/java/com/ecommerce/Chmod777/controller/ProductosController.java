@@ -59,5 +59,13 @@ public class ProductosController {
 		return productosService.updateProducto(prodId, name, price, thumbnail, descriptions, category);
 	}
 	
+	@PutMapping(path="{}prodId")
+	public Producto updateProducto(@PathVariable("proId") Long id,
+			@RequestParam(required = false) String nombre,
+	  		@RequestParam(required = false) String descripcion,
+	  		@RequestParam(required = false) String URL_imagen,
+	  		@RequestParam(required = false) double precio) {
+	return productosService.updateProdcuto(id, nombre, descripcion, URL_imagen, precio);
+}//updateProducto
 	
 }//Text to class product control
