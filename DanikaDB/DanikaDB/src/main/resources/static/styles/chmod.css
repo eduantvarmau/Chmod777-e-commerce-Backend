@@ -1,0 +1,12 @@
+.jbTeam{
+    background-image: url(../img/777.png);
+    margin-bottom: 0%;
+    background-position:bottom;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

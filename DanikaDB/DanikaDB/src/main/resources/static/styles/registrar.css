@@ -1,0 +1,47 @@
+.jbReg {
+    background-image: url(../img/imgJbtm/registro.jpg);
+    margin-bottom: 0%;
+    background-position:center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/* Estilos botones*/
+.btnClean{
+    background-color: var(--colorBlueLight);
+    color: var(--colorWhite);
+}
+.btnClean:hover{
+    background-color: var(--colorWhite);
+    color: var(--colorBlueLight);
+    
+}
+
+.btnCancel{
+    background-color: var(--colorBlueClear);
+    color: var(--colorWhite);
+}
+.btnCancel:hover{
+    background-color: var(--colorWhite);
+    color: var(--colorBlueClear);
+    
+}
+
+.containerColorR{
+    padding: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    width: 80%;
+    margin: 5% 10% 0% 10%;
+    align-items: center;
+    background:#6fc4c531;
+    border-radius: 24px;
+    box-shadow:-3px -3px  #6FC3C5;
+    color:var(--colorBlueDark);
+    margin-bottom: 80px;
+    
+}

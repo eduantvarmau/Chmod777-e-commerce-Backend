@@ -1,0 +1,169 @@
+@media screen and (max-width: 600px) {
+
+.jumbotronInicio{
+    height: 200px;
+}
+.jumbotronNosotros{
+    height: 200px;
+}
+.jumbotronServicios{
+    height: 200px;
+}
+.jumbotronContacto{
+    height: 200px;
+}
+.jumbotronCita{
+    height: 200px;
+}
+.tituloJB{
+    font-size: 30px;
+}
+.parrafoJB{
+    font-size: 18px;
+}
+.containerabout, .jumbotron-about, .container__card, .card__father, .cardd {
+    width: 400px;
+    height: 400px;  
+}
+.parrafoCard{
+    display: none;
+}
+.parrafoCardM{
+    display: inline-block;
+}
+.containerabout{
+    background: none;
+}
+
+/*MEDIAS INDEX */
+
+
+.jbIndex{
+    height: 250px; 
+}
+.container1-0{
+    display: flex;
+    flex-direction: column;
+}
+.container1-1{
+    width: 400px;
+    margin-bottom: 50px;
+
+}
+.container1-2{
+    margin-top: 100px;
+    margin-bottom: 100px;
+    width: 100px;
+    height: 100px; 
+}
+
+.container2-0{
+    display: flex;
+    margin-left: -50px;
+    flex-direction: column;
+    flex-wrap: wrap;
+    width: 400px;
+    background: none;
+    box-shadow: none;
+    
+}
+.container2-1{
+    width: 400px;
+    color: var(--colorBlack);
+    margin-bottom: 50px;
+    
+}
+.container2-2{
+    width: 400px;
+    color: var(--colorBlack);
+    margin-bottom: 50px;
+    
+}
+.container2-3{
+    margin-left: -300px;
+    
+}
+.container4-0{
+    display: flex;
+    margin-left: -50px;
+    flex-direction: column;
+    flex-wrap: wrap;
+    width: 400px;
+    background: none;
+    box-shadow: none;
+}
+.container4-1{
+    width: 400px;
+    color: var(--colorBlack);
+    margin-bottom: 50px;
+    margin-left: 25px;
+}
+.container4-2{
+    width: 400px;
+    color: var(--colorBlack);
+    margin-bottom: 50px;
+    margin-left: 55px;
+}
+.container4-3{
+    margin-left: -300px;
+}
+.imgSize{
+    width: 350px;
+}
+}
+
+/* Carrusel*/
+@media (max-width: 850px){
+    .carousel-test {
+        flex: 0 0 25%;
+        max-width: 100%;
+    }
+
+.carousel-test {
+    flex: 0 0 100%;
+    max-width: 100%;
+    position: relative;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+/*media nosotro*/
+.jbNos{
+    height: 250px; 
+}
+/*media Servicios*/
+.jbServ{
+    height: 250px; 
+}
+/*media Agendar*/
+.jbAgen{
+    height: 250px; 
+}
+/*media Ayuda*/
+.jbHelp{
+    height: 250px; 
+}
+/*media chmood*/
+.jbTeam{
+    height: 250px; 
+}
+/*media Administrador*/
+.jbAdm{
+    height: 250px; 
+}
+/*media index*/
+.jbIndex{
+    height: 250px; 
+}
+/*media registro*/
+.jbReg{
+    height: 250px; 
+}
+
+
+
+}
+
+
+
+
