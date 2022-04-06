@@ -1,0 +1,21 @@
+/*map*/
+
+/*responsive*/
+.map-responsive{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow:hidden;
+    padding-bottom:56.25%;
+    position:relative;
+    
+}
+
+/*iframe responsive*/
+.map-responsive iframe{
+    left:0;
+    top:0;
+    height:100%;
+    width:100%;
+    position:absolute;
+}

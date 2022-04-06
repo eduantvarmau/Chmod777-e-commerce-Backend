@@ -11,8 +11,7 @@ import org.springframework.stereotype.Service;
 @Service
 public class UsuariosService {
 
-		private final UsuariosRepository
-										usuariosRepository;
+		private final UsuariosRepository usuariosRepository;
 		@Autowired
 		public UsuariosService(UsuariosRepository usuariosrepository) {
 			super();
