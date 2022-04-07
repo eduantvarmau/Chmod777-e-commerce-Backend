@@ -1,86 +1,67 @@
-let servicios = JSON.parse(localStorage.getItem('services'));
+//GET PRODUCTOS
 
-//crearCard Servicios
+  async function fetchDataAsync(url){
+      try{
+          let respuesta = await fetch(url);
+          let productos = await respuesta.json();
+          return productos
+      }catch(error){
+          return error
+      }
+  }
+  function crearTarjeta(producto){
+  
 
-        function crearCard(title,description,image){
-            let myCard = `
-            <div class="col mb-4"
+      let cardProducto = `
+      <div class="col mb-4"
             <div class="card">
-                    <img src="./../img/serv/${image}" class="card-img-top alt="...">
+                    <img src="./../img/serv/${producto.url_imagen}" class="card-img-top alt="...">
                     <div class="card-body card-bodyy ">
-                    <h5 class="card-titles titleStyleCard">${title}</h5>
-                    <p class="card-texts">${description}</p>
+                    <h5 class="card-titles titleStyleCard">${producto.nombre}</h5>
+                    <p class="card-texts">${producto.descripcion}</p>
                     </div>
                     <div class="card-button">
                     <a href="#" class="btn btn-col btnDef">Agendar</a>
                     </div>
             </div>      
-            </div>`;
-            return myCard;
-            }
+            </div>
+      `;
+      return cardProducto;
+  }
+  function crearTarjetas(arrayProductos){
+      let ancla = document.getElementById("anclaservicios");
+      let acumulador = "";
+      arrayProductos.forEach(element => {
+ 
+          let nuevaTarjeta =  crearTarjeta(element);
+  
+         acumulador = acumulador + nuevaTarjeta;
+  
+      });
+      ancla.innerHTML = acumulador;
+  }
 
-            //MOSTRAR CARD SERVICIOS
-            function mostrarElementosServicios(servicios) {
-            anclaservicios = document.getElementById('anclaservicios'); //TRAER ELEMENTO
-            let containerServicio = '';
-
-                for (let i = 0; i < servicios.length; i++) {
-
-                    
-                    let title = servicios[i].title;
-                    let image = servicios[i].image;
-                    let description = servicios[i].description;
-
-                    containerServicio += crearCard(title, description,image);
-                    anclaservicios.innerHTML = containerServicio;
-                }
-            } //PINTAR CARDS SERVICIOS
-            mostrarElementosServicios(servicios);
-
-
-//-------------------------------------------------------------------
-
-let taller = JSON.parse(localStorage.getItem('talleres'));
-
-//crearCard Talleres
-function crearCardTaller(title,description,image) {
-let myCardTaller = `
-<div class="col mb-4"
-  <div class="card">
-          <img src="./../img/serv/${image}" class="card-img-top" alt="...">
-        <div class="card-body card-bodyy">
-          <h5 class="card-titles">${title}</h5>
-          <p class="card-texts">${description}</p>
-        </div>
-        <div class="card-button">
-          <a href="#" class="btn btn-col btnDef">Agendar</a>
-        </div>
-  </div>      
-</div>`;
-return myCardTaller;
-}
+  window.onload =function(){
+      let url = "http://localhost:8080/api/productos/";
+  
+      let datos = fetchDataAsync(url);
+      datos
+      .then(productos =>{
+          crearTarjetas(productos);
+      })
+      .catch(error => {
+          console.error(error)
+      })
+  
+  }
 
 
-
-// MOSTRAR CARD TALLER
-function mostrarElementosTaller(taller) {
-let anclataller = document.getElementById("anclataller"); //TRAER ELEMENTO
-let containerTaller = '';
-
-    for (let j = 0; j < taller.length; j++) {
-
-        let title = taller[j].title;
-        let image = taller[j].image;
-        let description = taller[j].description;
-
-        containerTaller += crearCardTaller(title, description, image);
-        anclataller.innerHTML = containerTaller;
-    }
-}
-mostrarElementosTaller(taller);
+	 
+//POST CREACIÓN DE PRODUCTO
 
 
+//POST REGISTRO USUARIO
 
 
-
+//POST INICIO DE SESIÓN
 
