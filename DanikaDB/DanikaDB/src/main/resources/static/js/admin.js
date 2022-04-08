@@ -42,7 +42,7 @@ let myAdmin = `<div class="container">
                         <div id="imageDemo"></div>
                     </div>
                 </div>
-                <button class="btn btn-addservices btnDef float-right" type="submit" value="add">
+                <button id="input" class="btn btn-addservices btnDef float-right" type="submit" value="add">
                     Agregar Servicio
                 </button>
             </form>

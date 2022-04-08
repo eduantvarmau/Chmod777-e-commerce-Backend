@@ -58,6 +58,43 @@
 
 	 
 //POST CREACIÓN DE PRODUCTO
+const url = "http://localhost:8080/api/productos/";
+
+const getData = () => {
+
+  const title = document.getElementById("newService")
+  const type = document.getElementById("serviceTipe")
+  const description = document.getElementById("description")
+  const photoUrl = document.getElementById("imgServ")
+
+  const title = titleElement.value;
+  const type = typeElement.value;
+  const description = descriptionElement.value;
+  const photoUrl = photoUrlElement.value;
+
+  createProduct(title, type, description, photoUrl);
+};
+
+const submitBtn = document.getElementById("input");
+
+submitBtn.addEventListener("click", getData);
+
+
+fetch(url, {
+method: 'POST', // or 'PUT'
+headers: {
+'Content-Type': 'application/json',
+ },
+ body: JSON.stringify(getData),
+})
+.then(response => response.json())
+.then(getData => {
+console.log('Success:', getData);
+})
+.catch((error) => {
+console.error('Error:', error);
+});
+
 
 
 //POST REGISTRO USUARIO
