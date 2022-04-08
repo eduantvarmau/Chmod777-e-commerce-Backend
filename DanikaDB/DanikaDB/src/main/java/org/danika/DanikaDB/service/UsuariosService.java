@@ -5,6 +5,7 @@ import java.util.Optional;
 
 import org.danika.DanikaDB.model.ChangePassword;
 import org.danika.DanikaDB.model.Usuario;
+import org.danika.DanikaDB.utils.SHAUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -54,6 +55,18 @@ public class UsuariosService {
 				}//password
 			}//if isPresent
 		}//updateUsuario
+		
+		public boolean validateUsuario(Usuario usuario) {
+			boolean res = false;
+			Optional<Usuario> userByName=usuariosRepository.findByUsername(usuario.getUsername());
+			if(userByName.isPresent()){
+				Usuario u = userByName.get();
+				if(SHAUtils.verifyHash(usuario.getPassword(), u.getPassword())){
+					res = true;
+				}//if password
+			}//if isPresent
+			return res;
+		}//validateUsuario
 		
 		
 		

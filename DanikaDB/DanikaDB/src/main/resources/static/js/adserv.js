@@ -63,5 +63,38 @@
 //POST REGISTRO USUARIO
 
 
+
+
+const url ="http://localhost:8080/api/usuarios/";
+const myForm = document.querySelector("form-registro");
+
+myForm.addEventListener("submit", async (e)=>{
+	e.preventDefault();
+	const formData = new FormData(myForm);
+	const formDataSerialized = Object.fromEntries(formData);
+	const jsonObject ={
+		...formDataSerialized,
+		sendToSelf: formDataSerialized.sendToSelf ? true : false,
+	};
+	
+	try{
+		const response = await fetch (url,{
+			method: "POST",
+			body: JSON.stringify(jsonObject),
+			headers:{
+				"Content-Type": "application/json",
+			},
+		});
+		const json = await response.json();
+		console.log(json);
+	}catch(e){
+		console.error(e);
+		alert("there as an error")
+	}
+	
+});
+
+
+
 //POST INICIO DE SESIÓN
 
