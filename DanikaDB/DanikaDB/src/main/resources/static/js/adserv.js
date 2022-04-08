@@ -62,10 +62,10 @@ const url = "http://localhost:8080/api/productos/";
 
 const getData = () => {
 
-  const title = document.getElementById("newService")
-  const type = document.getElementById("serviceTipe")
-  const description = document.getElementById("description")
-  const photoUrl = document.getElementById("imgServ")
+  const titleElement = document.getElementById("newService")
+  const typeElement = document.getElementById("serviceTipe")
+  const descriptionElement = document.getElementById("description")
+  const photoUrlElement = document.getElementById("imgServ")
 
   const title = titleElement.value;
   const type = typeElement.value;
@@ -99,10 +99,6 @@ console.error('Error:', error);
 
 //POST REGISTRO USUARIO
 
-
-
-
-const url ="http://localhost:8080/api/usuarios/";
 const myForm = document.querySelector("form-registro");
 
 myForm.addEventListener("submit", async (e)=>{
